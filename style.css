@@ -1,0 +1,336 @@
+/* ベース */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Yu Gothic", "YuGothic", sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #f5f5f5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ヘッダー */
+
+/* =========================
+      ヘッダー（固定ナビ）
+========================= */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffffcc;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 80px;  /* ロゴの大きさ */
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo-text h1 {
+    font-size: 36px;      /* LINK の文字サイズ */
+    letter-spacing: 0.1em;
+    color: #006633;
+}
+
+.tagline {
+    font-size: 23px;      /* 「人をつなぎ〜」のサイズ */
+    color: #444;
+}
+
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #006633;
+  padding: 4px 8px;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav a:hover {
+  background: #006633;
+  color: #fff;
+}
+
+/* ヒーロー */
+
+.hero {
+  position: relative;
+  color: #fff;
+  padding: 120px 0 80px;  /* 上に余白をしっかり取る */
+  background:
+    linear-gradient(90deg, rgba(0,80,40,0.85), rgba(120,0,0,0.7)),
+    url("../img/hero-construction.jpg") center/cover no-repeat;
+}
+
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../img/hero-construction.jpg") center/cover no-repeat;
+  filter: brightness(0.6);
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 102, 51, 0.8), rgba(153, 0, 0, 0.7));
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h2 {
+    font-size: 48px;   /* ← ここ大きくする！ */
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 20px;   /* ← 好みで調整！ */
+    margin-bottom: 24px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ボタン */
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid transparent;
+}
+
+.btn.primary {
+  background: #006633;
+  color: #fff;
+}
+
+.btn.outline {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #004922;
+}
+
+.btn.outline:hover {
+  background: #ffffff22;
+}
+
+/* セクション共通 */
+
+.section {
+  padding: 60px 0;
+  background: #f5f5f5;
+}
+
+.section-alt {
+  background: #ffffff;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: #006633;
+}
+
+/* レイアウト */
+
+.two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 30px;
+  align-items: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  color: #006633;
+  font-size: 18px;
+}
+
+/* 画像枠 */
+
+.image-frame {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+.image-frame img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+/* その他 */
+
+.list {
+  margin-top: 12px;
+  margin-left: 1em;
+}
+
+.note {
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.site-footer {
+  padding: 18px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  background: #111;
+  color: #eee;
+}
+
+
+
+/* スマホ対応：幅768px以下のとき */
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    width: 94%;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 4px 0 8px;
+  }
+
+  .logo-area {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 40px 0 50px;
+    text-align: left;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .image-frame img {
+    height: 170px;
+  }
+}
+
+.qr-box {
+    margin-top: 10px;
+}
+
+.qr {
+    width: 150px;
+    height: auto;
+}
+
